@@ -9,15 +9,26 @@
 
 
     <script>
-        let out="";
-        function Vowels(vow){
-        for(i=0;i<=vow.length;i++){
-            vow.include("/[a,e,i,o,u]/\g");
-            out+=vow;
+        function FindLargestVowelWord(arr){
+            let vowels = "aeiouAEIOU";
+            let maxVowelCount = 0;
+            let largestWord = "";
+            for(let i=0; i<arr.length; i++){
+                let currentWord = arr[i];
+                let vowelCount = 0;
+            for(let j=0; j<currentWord.length; j++){
+                if(vowels.includes(currentWord[j])){
+                        vowelCount++;
+                    }
+                }
+            if(vowelCount > maxVowelCount){
+                    maxVowelCount = vowelCount;
+                    largestWord = currentWord;
+                }
+            }
+            return largestWord;
         }
-        return out;
-        }
-        console.log(Vowels("hey sinamika "));
+        console.log(FindLargestVowelWord(['apple', 'banana', 'orange', 'grape', 'kiwi']));
     </script>
 </body>
 </html>
