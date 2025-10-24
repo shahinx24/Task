@@ -18,3 +18,16 @@ let max = numbers.reduce(function(accumulator, currentValue) {
 }, numbers[0]);
 console.log(max);
 // Output: 5
+
+// Using reduce to function values
+function averageOf4Numbers(nr1, nr2, nr3, nr4) {
+    let numbers = [nr1, nr2, nr3, nr4];
+    let sum = numbers.reduce(function(accumulator, currentValue) {
+        return accumulator + currentValue;
+    }, 0);
+}
+    return sum / numbers.length;
+
+let average = averageOf4Numbers(11, 9, 28, 20.25);
+console.log(average);
+// Output: 17.5625
