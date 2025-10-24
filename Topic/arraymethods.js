@@ -44,3 +44,12 @@ let filteredFruits = fruits.filter(function(fruit) {
 });
 console.log(filteredFruits);
 // Output: ['Cherry']
+
+// Array concat 
+function concat3(string1, string2, string3, separator) {
+    return string1.concat(separator, string2, separator, string3);
+}
+console.log(concat3('Hello', 'World', '2024', ' ,'));
+// Output: 'Hello ,World ,2024'
+
+
