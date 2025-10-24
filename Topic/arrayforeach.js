@@ -19,11 +19,11 @@ numbers.forEach(function(num) {
 // i can print only one element with for each ?
 numbers.forEach(function(num, index) {
     if(index === 2) { // Print only the element at index 2
-        console.log(num , index);
+        console.log(num ,+"index : "+ index);
     }
 });
 // Output:
-// 33 2
+// 33 index : 2
 
 // Using forEach with arrow function
 numbers.forEach(num => console.log(num * 2));
