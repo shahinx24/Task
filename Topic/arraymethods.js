@@ -51,5 +51,3 @@ function concat3(string1, string2, string3, separator) {
 }
 console.log(concat3('Hello', 'World', '2024', ' ,'));
 // Output: 'Hello ,World ,2024'
-
-
