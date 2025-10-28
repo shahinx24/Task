@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="user" placeholder="Enter User Name"><br><br>
+    <input type="number" id="amount" placeholder="Enter Amount"><br><br>
+    <button onclick="user()">Get User Info</button><br><br>
+    <button onclick="Deposit()">Deposit</button><br><br>
+    <button onclick="Withdraw()">Withdraw</button><br><br>
+    <button onclick="Transfer()">Transfer</button><br><br>
+    <button onclick="report()">Generate Report</button><br><br>
+    <p id="report"></p>
+    <p id="output"></p>
+
+    <script>
+//  # Mini Bank Account System 
+// - Users array: ```jsx const users = [
+//  { name: "John", balance: 5000 }, 
+// { name: "Sara", balance: 3000 },
+//  { name: "Tom", balance: 7000 } 
+// ];
+//  ``` - Functions to: 
+// 1. Deposit money. 
+// 2. Withdraw money (check for sufficient balance).
+//  3. Transfer money between accounts. 
+// 4. Generate a report of all balances and total bank balance.
+const users = [
+  { name: "John", balance: 5000 }, 
+ { name: "Sara", balance: 3000 },
+  { name: "Tom", balance: 7000 } 
+ ];
+ function Deposit(){
+     for( let money in users){
+        let amountValue = document.getElementById("amount").value;
+        if (amountValue === "" || parseInt(amountValue) <= 0  && users[money].name==document.getElementById("user").value) {
+            document.getElementById("report").innerHTML = "Please enter amount";
+            return;
+        }
+        else if (users[money].name==document.getElementById("user").value){
+            users[money].balance+=parseInt(document.getElementById("amount").value);
+            document.getElementById("output").innerHTML = `Deposited: ${document.getElementById("amount").value}<br> New Balance: ${users[money].balance}`;
+            return;
+        }
+        else{
+            document.getElementById("report").innerHTML = "User Not found";
+            return;
+        }
+     }
+ }
+  function user(){
+        if(users[x].name==document.getElementById("user").value){
+             document.getElementById("output").innerHTML = `User : ${users[x].name}, balance : ${users[x].balance}`;
+             return;
+         }
+         else{
+             document.getElementById("report").innerHTML = "User Not found";
+         }
+        }
+  function Withdraw(){
+    for( let money in users){
+       let amountValue = document.getElementById("amount").value;
+       if (amountValue === "" || parseInt(amountValue) <= 0  && users[money].name==document.getElementById("user").value) {
+           document.getElementById("report").innerHTML = "Please enter amount";
+           return;
+       }
+       else if (users[money].name==document.getElementById("user").value){
+           if(users[money].balance<parseInt(document.getElementById("amount").value)){
+               document.getElementById("report").innerHTML ="Insufficient Balance";
+               return;
+           }
+           users[money].balance-=parseInt(document.getElementById("amount").value);
+           document.getElementById("output").innerHTML = `Withdrawn: ${document.getElementById("amount").value}<br> New Balance: ${users[money].balance}`;
+           return;
+       }
+       else{
+           document.getElementById("report").innerHTML = "User Not found";
+       }
+    }
+}
+
+  function Transfer(){
+    let sender = prompt("Enter sender name:");
+    let receiver = prompt("Enter receiver name:");
+    let amount = parseInt(prompt("Enter amount to transfer:"));
+    let senderFound = false;
+    let receiverFound = false;
+
+    for(let i in users){
+        if(users[i].name === sender){
+            senderFound = true;
+            if(users[i].balance < amount){
+                return document.getElementById("report").innerHTML = "Insufficient Balance in sender's account";
+            }
+            users[i].balance -= amount;
+        }
+        if(users[i].name === receiver){
+            receiverFound = true;
+            users[i].balance += amount;
+        }
+    }
+
+    if(!senderFound){
+        ocument.getElementById("report").innerHTML = "Sender not found";
+    }
+    if(!receiverFound){
+        document.getElementById("report").innerHTML = "Receiver not found";
+        return;
+    }
+    document.getElementById("output").innerHTML = `Transferred ${amount} from ${sender} to ${receiver}`;
+    return;
+}
+
+function report() {
+    let reportText = "";
+    let total = 0;
+
+    for (let x in users) {
+        reportText += `Name: ${users[x].name}, Balance: ${users[x].balance}<br>`;
+        total += users[x].balance;
+    }
+
+    document.getElementById("report").innerHTML = reportText;
+    document.getElementById("output").innerHTML = `Total Bank Balance: ${total}`;
+    return;
+}
+    </script>
+</body>
+</html>

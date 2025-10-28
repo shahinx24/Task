@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+## E-Commerce Cart System -
+ Products array: 
+const products = [ { id: 1, name: "Laptop", price: 50000 },
+ { id: 2, name: "Mouse", price: 500 },
+ { id: 3, name: "Keyboard", price: 1500 } ];
+  Functions to:
+1. Add products to cart.
+2. Calculate total cart value.
+3. Apply discount if total > 1000.
+4. Remove items from cart.
+
+    <script>
+const products = [
+  { id: 1, name: "Laptop", price: 50000 },
+  { id: 2, name: "Mouse", price: 500 },
+  { id: 3, name: "Keyboard", price: 1500 }
+];
+
+products.forEach(product => {
+  console.log(product.name);
+});
+
+const total = products.reduce((sum,item) => sum + item.price,0);
+console.log("Total Price: " + total);
+
+if (total > 1000) {
+  console.log("Discount will apply!");
+} else {
+  console.log("No Discount!");
+}
+
+for(let x of products){
+products.splice(1, 1);
+console.log(x.name);
+}
+    </script>
+</body>
+</html>
