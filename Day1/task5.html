@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>2. Create a function that takes two numbers as arguments (num, length) 
+and returns an array of multiples of num until the array length reaches 
+length. (Score 3).  
+a. Examples: ● arrayOfMultiples(7, 5) ➞ [7, 14, 21, 28, 35] ● 
+arrayOfMultiples(12, 10) ➞ [12, 24, 36, 48, 60, 72, 84, 96, 108, 
+120] ● arrayOfMultiples(17, 6) ➞ [17, 34, 51, 68, 85, 102] </p>
+
+    <script>
+function great(n,l){
+    let sum=0;
+    let arr=[];
+    for(let i=1;i<=l;i++){
+        sum=i*n;
+        arr.push(sum);
+    }
+    return arr;
+}
+console.log(great(7,5));
+    </script>
+</body>
+</html>
