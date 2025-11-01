@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<p> 
+     1. Create a function that takes a string and a number n.Return the string 
+truncated to the first n characters followed by "..." if it’s longer than n. 
+(Score 2)  
+a. Example: ● truncate("Hello World", 5) ➞ "Hello..." ● 
+truncate("Hi", 5) ➞ "Hi" ● truncate(“Bridgeon”, 4) ➞ “Brid…” </p>
+
+    <script> 
+function str(string,n){
+    for(i=0;i<string.length;i++){
+        if(string.length<=n){
+            return string;
+        }
+        if(string.length>n){
+            const truncate=string.slice(0,n);
+            return truncate + "...";
+        }
+    }
+}
+console.log(str("hellooo",5));
+    </script>
+</body>
+</html>
