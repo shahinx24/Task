@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Filter & Search</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .filters {
+      margin-bottom: 15px;
+    }
+    .product {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 5px;
+      width: 150px;
+      text-align: center;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h2>🛍️ Product List</h2>
+
+  <div class="filters">
+    <label>Search Product: </label>
+    <input type="text" id="searchInput" placeholder="Enter name">
+
+    <label>Max Price: </label>
+    <input type="number" id="priceInput" placeholder="Enter price">
+
+    <button onclick="Products()">Apply Filter</button>
+  </div>
+
+  <div id="productList"></div>
+
+  <script>
+    // Step 1: Product data
+    const products = [
+      { name: "Phone", price: 25000 },
+      { name: "Laptop", price: 60000 },
+      { name: "Watch", price: 5000 },
+      { name: "Headphones", price: 2000 },
+      { name: "Tablet", price: 18000 },
+      { name: "Camera", price: 35000 }
+    ];
+
+    // Step 2: Display function
+    function displayProducts(list) {
+      const container = document.getElementById("productList");
+      if (list.length === 0) {
+        container.innerHTML = "<p>No matching products found.</p>";
+        return;
+      }
+      container.innerHTML = list.map(p =>
+        `<div class="product">
+          <h4>${p.name}</h4>
+          <p>₹${p.price}</p>
+        </div>`
+      ).join("");
+    }
+
+    // Step 3: Filter function
+    function Products() {
+      const searchText = document.getElementById("searchInput").value.toLowerCase();
+      const maxPrice = document.getElementById("priceInput").value;
+
+      let filtered = products;
+
+      // Filter by name (case-insensitive)
+      if (searchText !== "") {
+        filtered = filtered.filter(p => p.name.toLowerCase().includes(searchText));
+      }
+
+      // Filter by price
+      if (maxPrice !== "" && !isNaN(maxPrice)) {
+        filtered = filtered.filter(p => p.price <= maxPrice);
+      }
+
+      displayProducts(filtered);
+    }
+
+    // Step 4: Display all products initially
+    displayProducts(products);
+
+    // Step 5 (optional): Filter as user types in search box
+    document.getElementById("searchInput").addEventListener("input", Products);
+  </script>
+</body>
+</html>
