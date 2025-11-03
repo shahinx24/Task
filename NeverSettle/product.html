@@ -36,7 +36,6 @@
   <div id="productList"></div>
 
   <script>
-    // Step 1: Product data
     const products = [
       { name: "Phone", price: 25000 },
       { name: "Laptop", price: 60000 },
@@ -46,7 +45,6 @@
       { name: "Camera", price: 35000 }
     ];
 
-    // Step 2: Display function
     function displayProducts(list) {
       const container = document.getElementById("productList");
       if (list.length === 0) {
@@ -61,30 +59,21 @@
       ).join("");
     }
 
-    // Step 3: Filter function
     function Products() {
       const searchText = document.getElementById("searchInput").value.toLowerCase();
       const maxPrice = document.getElementById("priceInput").value;
-
+      
       let filtered = products;
-
-      // Filter by name (case-insensitive)
       if (searchText !== "") {
         filtered = filtered.filter(p => p.name.toLowerCase().includes(searchText));
       }
-
-      // Filter by price
       if (maxPrice !== "" && !isNaN(maxPrice)) {
         filtered = filtered.filter(p => p.price <= maxPrice);
       }
 
       displayProducts(filtered);
     }
-
-    // Step 4: Display all products initially
     displayProducts(products);
-
-    // Step 5 (optional): Filter as user types in search box
     document.getElementById("searchInput").addEventListener("input", Products);
   </script>
 </body>
