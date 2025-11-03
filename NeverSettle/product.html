@@ -4,7 +4,7 @@
   <title>Product Filter & Search</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Times New Roman', Times, serif;
     }
     .filters {
       margin-bottom: 15px;
@@ -62,7 +62,7 @@
     function Products() {
       const searchText = document.getElementById("searchInput").value.toLowerCase();
       const maxPrice = document.getElementById("priceInput").value;
-      
+
       let filtered = products;
       if (searchText !== "") {
         filtered = filtered.filter(p => p.name.toLowerCase().includes(searchText));
