@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p>Input: s = "A man, a plan, a canal: Panama"</p><p>
+Output: true</p><p>
+Explanation: "amanaplanacanalpanama" is a palindrome.</p>    
+
+    <script>
+const s = "A man, a plan, a canal: Panama";
+const find =s.toLowerCase().replace(/[^a-zA-Z0-9]/g,'');
+console.log(find);
+const match=find.split('').reverse().join('');
+console.log(match);
+return match == find;
+    </script>
+</body>
+</html>
