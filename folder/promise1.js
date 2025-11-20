@@ -20,10 +20,10 @@
 
 async function fetchdata(){
     try
-    {const response = await fetch('https://jsonplaceholderr.typicode.com/posts');
+    {const response = await fetch('https://jsonplaceholder.typicode.com/posts');
     const data = await response.json();
     data.forEach(pop=>{
-        console.log(pop.id);
+        console.log(pop);
     })}
     catch(error)
     {
