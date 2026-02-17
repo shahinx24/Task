@@ -25,11 +25,13 @@ export default function Timer(){
     }
 
     return(
-        <>
+        <div className="Container">
         <h2>{FormatTime()}</h2>
+        <div className="buttons">
         <button onClick={()=> setRunning(true)}>Play</button>
         <button onClick={()=> setRunning(false)}>Play</button>
         <button onClick={HandleRest}>Play</button>
-        </>
+        </div>
+        </div>
     )
 }
