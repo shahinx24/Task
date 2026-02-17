@@ -19,9 +19,17 @@ export default function Timer(){
         return `${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
     }
 
+    function HandleRest(){
+        setRunning(false), 
+        setSeconds(0);
+    }
+
     return(
         <>
-        <h2></h2>
+        <h2>{FormatTime()}</h2>
+        <button onClick={()=> setRunning(true)}>Play</button>
+        <button onClick={()=> setRunning(false)}>Play</button>
+        <button onClick={HandleRest}>Play</button>
         </>
     )
 }
