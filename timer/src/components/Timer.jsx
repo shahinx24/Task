@@ -29,8 +29,8 @@ export default function Timer(){
         <h2>{FormatTime()}</h2>
         <div className="buttons">
         <button onClick={()=> setRunning(true)}>Play</button>
-        <button onClick={()=> setRunning(false)}>Play</button>
-        <button onClick={HandleRest}>Play</button>
+        <button onClick={()=> setRunning(false)}>Pause</button>
+        <button onClick={HandleRest}>reset</button>
         </div>
         </div>
     )
