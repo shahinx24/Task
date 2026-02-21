@@ -1,0 +1,23 @@
+.container{
+    width:100px;
+    border-radius:10px;
+    padding:20px;
+    background:grey;
+    margin:20px auto;
+}
+.light{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:transparent;
+    margin:10px auto;
+}
+.red.active{
+    background:red;
+}
+.green.active{
+    background:green;
+}
+.yellow.active{
+    background:yellow;
+}
