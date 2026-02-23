@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Words</title>
+</head>
+<body>
+    
+
+    <script>
+        function reverseWords(s) {
+    return s.split(" ")
+            .map(word => word.split("").reverse().join("")) //split and reverse each word and join it
+            .join(" ");
+    }
+    console.log(reverseWords("Let's take LeetCode contest"));
+    </script>
+</body>
+</html>

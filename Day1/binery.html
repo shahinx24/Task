@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>binery</title>
+</head>
+<body>
+    <p>Least binery number print </p>
+
+    <script>
+    function ico(n){
+    let x = n;
+        while ((x & (x + 1)) != 0){
+            x++;
+        }
+        return x;
+}
+console.log(ico(16));
+</script>
+</body>
+</html>

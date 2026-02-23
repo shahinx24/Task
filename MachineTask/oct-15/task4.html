@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        function FindLargestVowelWord(arr){
+            let vowels = "aeiouAEIOU";
+            let maxVowelCount = 0;
+            let largestWord = "";
+            for(let i=0; i<arr.length; i++){
+                let currentWord = arr[i];
+                let vowelCount = 0;
+            for(let j=0; j<currentWord.length; j++){
+                if(vowels.includes(currentWord[j])){
+                        vowelCount++;
+                    }
+                }
+            if(vowelCount > maxVowelCount){
+                    maxVowelCount = vowelCount;
+                    largestWord = currentWord;
+                }
+            }
+            return largestWord;
+        }
+        console.log(FindLargestVowelWord(['apple', 'banana', 'orange', 'grape', 'kiwi']));
+    </script>
+</body>
+</html>

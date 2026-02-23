@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    function stocks(product){
+    return product
+    .filter(num=>num.stock > 0)
+    .map(num=>num.name);
+}
+console.log(stocks(
+    [ { name: "Pen", stock: 10 },
+    { name: "Pencil", stock: 0 },
+    { name: "Notebook", stock: 5 } ]
+));
+    </script>
+</body>
+</html>
