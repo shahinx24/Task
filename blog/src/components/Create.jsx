@@ -21,7 +21,7 @@ export default function Create({setBlog}){
         <h2>Title</h2>
         <input onChange={(e)=> setTask(e.target.value)}
         value={task}/>
-        <h3>discribtion</h3>
+        <h3>Discrpition</h3>
         <input onChange={(e)=> setDes(e.target.value)}
         value={des}/>
         <button onClick={HandleClick}>Add Blog</button>

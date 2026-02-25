@@ -5,7 +5,9 @@ export default function View({blog}){
         <>
         {blog.map((item)=>(
             <p key={item.id}>
-                <Link to="/Detail">{item.text} </Link>
+                <Link to={`/detail/${item.id}`}>
+                    <h2>{item.text}</h2>
+                </Link>
             </p>
         ))}
         </>
