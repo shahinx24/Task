@@ -1,5 +1,6 @@
 import {useState} from "react";
 import { useNavigate } from "react-router-dom"
+import "./style/style.css"
 
 export default function Create({setBlog}){
     const [task,setTask]= useState("")
@@ -17,15 +18,15 @@ export default function Create({setBlog}){
     }
 
     return(
-        <>
-        <h2>Title</h2>
-        <input onChange={(e)=> setTask(e.target.value)}
+        <div className="container">
+        <h2 className="tite">Title</h2>
+        <input className="input" onChange={(e)=> setTask(e.target.value)}
         value={task}/>
-        <h3>Discrpition</h3>
-        <input onChange={(e)=> setDes(e.target.value)}
+        <h3 className="dis">Discrpition</h3>
+        <input className="input" onChange={(e)=> setDes(e.target.value)}
         value={des}/>
-        <button onClick={HandleClick}>Add Blog</button>
-        <p onClick={()=> navigate("/View")}>View Blogs</p>
-        </>
+        <button className="button" onClick={HandleClick}>Add Blog</button>
+        <p className="p" onClick={()=> navigate("/View")}>View Blogs</p>
+        </div>
     )
 }
