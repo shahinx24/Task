@@ -12,12 +12,12 @@ export default function Detail({ blog }) {
   }
 
   return (
-    <>
-    <h1>Title</h1>
-      <h2>{currentBlog.text}</h2>
-    <h3>Discrbtion</h3>
-      <h4>{currentBlog.detail}</h4>
-      <Link to="/view">Go Back</Link>
-    </>
+    <div className="container">
+    <h1 className="title">Title</h1>
+      <h2 className="tite">{currentBlog.text}</h2>
+    <h3 className="disc">Discrbtion</h3>
+      <h4 className="dis">{currentBlog.detail}</h4>
+      <Link to="/view" className="p">Go Back</Link>
+    </div>
   );
 }

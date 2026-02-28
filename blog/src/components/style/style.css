@@ -4,11 +4,11 @@
   font-family: "Inter", "Segoe UI", sans-serif;
 }
 
-/* Page background */
+/* Page center */
 body {
   min-height: 100vh;
   margin: 0;
-  background: #ffffff;
+  background: #f9f9f9;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,86 +17,67 @@ body {
 /* Container */
 .container {
   width: 100%;
-  max-width: 420px;
-  padding: 32px;
-  border-radius: 14px;
-  background: #ffffff;
-  border: 1px solid #e5e5e5;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-/* Title */
-.tite {
-  font-size: 26px;
-  font-weight: 600;
-  color: #000000;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-/* Labels */
-.dis {
-  font-size: 14px;
-  font-weight: 500;
-  color: #111111;
-  margin: 16px 0 6px;
-}
-
-/* Inputs */
-.input {
-  width: 100%;
-  padding: 14px 16px;
-  border-radius: 10px;
-  border: 1px solid #d1d1d1;
-  background: #ffffff;
-  color: #000000;
-  font-size: 15px;
-  transition: border 0.25s ease, box-shadow 0.25s ease;
-}
-
-.input:focus {
-  outline: none;
-  border-color: #000000;
-  box-shadow: 0 0 0 1px #000000;
-}
-
-/* Button */
-.button {
-  width: 100%;
-  margin-top: 24px;
-  padding: 14px;
-  border-radius: 12px;
-  border: none;
+  max-width: 480px;
+  padding: 36px;
+  border-radius: 16px;
   background: #000000;
+  border: 1px solid #222;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Main heading */
+.title {
+  font-size: 38px;
+  font-weight: 700;
   color: #ffffff;
-  font-size: 15px;
+  margin-bottom: 12px;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+/* Blog title */
+.tite {
+  font-size: 22px;
+  font-weight: 500;
+  color: #eaeaea;
+  margin-bottom: 28px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Section label */
+.disc {
+  font-size: 14px;
   font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  color: #bdbdbd;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
 }
 
-.button:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  transform: translateY(-1px);
+/* Blog description */
+.dis {
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.6;
 }
 
-.button:active {
-  transform: scale(0.97);
-}
-
-/* View Blogs link */
+/* Go Back link */
 .p {
-  margin-top: 18px;
+  display: block;
+  margin-top: 32px;
   text-align: center;
   font-size: 14px;
   font-weight: 500;
-  color: #000000;
-  cursor: pointer;
-  opacity: 0.75;
-  transition: opacity 0.2s ease;
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .p:hover {
   opacity: 1;
+  transform: translateY(-1px);
   text-decoration: underline;
 }
