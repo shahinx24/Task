@@ -25,6 +25,7 @@ export default function Create({setBlog}){
         <input onChange={(e)=> setDes(e.target.value)}
         value={des}/>
         <button onClick={HandleClick}>Add Blog</button>
+        <p onClick={()=> navigate("/View")}>View Blogs</p>
         </>
     )
 }
