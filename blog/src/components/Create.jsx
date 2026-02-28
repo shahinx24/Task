@@ -21,10 +21,10 @@ export default function Create({setBlog}){
         <div className="container">
         <h2 className="tite">Title</h2>
         <input className="input" onChange={(e)=> setTask(e.target.value)}
-        value={task}/>
+        value={task} placeholder="Input your Title"/>
         <h3 className="dis">Discrpition</h3>
         <input className="input" onChange={(e)=> setDes(e.target.value)}
-        value={des}/>
+        value={des} placeholder="Input your Discrption"/>
         <button className="button" onClick={HandleClick}>Add Blog</button>
         <p className="p" onClick={()=> navigate("/View")}>View Blogs</p>
         </div>
