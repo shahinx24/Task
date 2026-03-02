@@ -13,8 +13,10 @@ export default function Detail({ blog }) {
 
   return (
     <>
+    <h1>Title</h1>
       <h2>{currentBlog.text}</h2>
-      <h3>{currentBlog.detail}</h3>
+    <h3>Discrbtion</h3>
+      <h4>{currentBlog.detail}</h4>
       <Link to="/view">Go Back</Link>
     </>
   );
