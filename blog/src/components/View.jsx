@@ -10,6 +10,7 @@ export default function View({blog}){
                 </Link>
             </p>
         ))}
+        <Link to="/" >Back</Link>
         </>
     )
 }
